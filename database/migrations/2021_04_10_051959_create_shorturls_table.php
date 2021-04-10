@@ -16,6 +16,7 @@ class CreateShorturlsTable extends Migration
         Schema::create('shorturls', function (Blueprint $table) {
             $table->id();
             $table->foreignid('user_id')->nullable()->constrained();
+            $table->string('Title')->nullable();
             $table->text('original_url');
             $table->string('short_url')->nullable();
             $table->string('visits')->default(0);
